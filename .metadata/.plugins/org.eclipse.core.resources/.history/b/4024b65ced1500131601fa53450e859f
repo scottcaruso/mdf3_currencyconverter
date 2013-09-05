@@ -1,0 +1,11 @@
+package com.scottcaruso.converters;
+
+public class ConvertToEuros {
+	
+	public double dollarsToEuros (double dollars)
+	{
+		float euros = dollars*.76f;
+		return euros;
+	}
+
+}

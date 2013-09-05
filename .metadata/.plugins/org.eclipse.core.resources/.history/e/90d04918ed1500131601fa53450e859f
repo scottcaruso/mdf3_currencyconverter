@@ -1,0 +1,10 @@
+package com.scottcaruso.converters;
+
+public class ConvertToEuros {
+	
+	public float dollarsToEuros (float dollars)
+	{
+		
+	}
+
+}
