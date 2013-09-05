@@ -1,3 +1,4 @@
 INDEX VERSION 1.126+/Users/scottcaruso/Desktop/Schoolwork/Month 23/week1/mdf3_currencyconverter/.metadata/.plugins/org.eclipse.jdt.core
 3090238721.index
 2643896295.index
+1584700522.index
