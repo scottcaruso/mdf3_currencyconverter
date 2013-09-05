@@ -1,0 +1,11 @@
+package com.scottcaruso.converters;
+
+public class ConvertToNewZealandDollar {
+	
+	public double dollarsToNewZealandDollars (double dollars)
+	{
+		double euros = dollars*1.26;
+		return euros;
+	}
+
+}

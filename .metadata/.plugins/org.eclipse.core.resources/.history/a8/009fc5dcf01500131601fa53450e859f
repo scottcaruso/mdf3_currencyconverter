@@ -1,0 +1,11 @@
+package com.scottcaruso.converters;
+
+public class ConvertToSwedishKrona {
+	
+	public double dollarsToKronas (double dollars)
+	{
+		double euros = dollars*6.66;
+		return euros;
+	}
+
+}

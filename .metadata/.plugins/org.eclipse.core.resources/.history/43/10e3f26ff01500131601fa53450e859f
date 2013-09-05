@@ -1,0 +1,11 @@
+package com.scottcaruso.converters;
+
+public class ConvertToHongKongDollar {
+	
+	public double dollarsToHongKongs (double dollars)
+	{
+		double euros = dollars*.76;
+		return euros;
+	}
+
+}

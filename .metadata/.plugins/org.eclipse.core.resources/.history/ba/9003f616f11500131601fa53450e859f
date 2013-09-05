@@ -1,0 +1,11 @@
+package com.scottcaruso.converters;
+
+public class ConvertToYen {
+	
+	public double dollarsToYes (double dollars)
+	{
+		double yen = dollars*.76;
+		return yen;
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.scottcaruso.converters;
+
+public class ConvertToCanadianDollar {
+	
+	public double dollarsToCanadianDollars (double dollars)
+	{
+		double euros = dollars*1.05;
+		return euros;
+	}
+
+}
