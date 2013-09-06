@@ -1,0 +1,51 @@
+package com.scottcaruso.activities;
+
+import java.util.ArrayList;
+
+import com.scottcaruso.converters.ConvertToEuros;
+import com.scottcaruso.converters.MasterConverter;
+import com.scottcaruso.currencyconverter.R;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.util.Log;
+import android.view.Menu;
+import android.widget.TextView;
+
+public class CurrencyActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_currency);
+        
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        
+        ArrayList<Double> thisConversion = MasterConverter.createCurrencyArray(1.25);
+        
+        //Init all of the dollar text views so the currency can be displayed
+        final TextView dollars = (TextView) findViewById(R.id.dollar_amt);
+        final TextView euros = (TextView) findViewById(R.id.euro_amt);
+        final TextView aussies = (TextView) findViewById(R.id.ausdol_amt);
+        final TextView canDols = (TextView) findViewById(R.id.can_amt);
+        final TextView hkDols = (TextView) findViewById(R.id.hk_amt_amt);
+        final TextView dollars = (TextView) findViewById(R.id.dollar_amt);
+        final TextView dollars = (TextView) findViewById(R.id.dollar_amt);
+        final TextView dollars = (TextView) findViewById(R.id.dollar_amt);
+        final TextView dollars = (TextView) findViewById(R.id.dollar_amt);
+        final TextView dollars = (TextView) findViewById(R.id.dollar_amt);
+        
+        dollars.setText(thisConversion.get(0).toString());
+        
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.currency, menu);
+        return true;
+    }
+    
+}

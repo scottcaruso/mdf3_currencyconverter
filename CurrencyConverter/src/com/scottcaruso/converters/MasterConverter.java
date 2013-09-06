@@ -18,9 +18,9 @@ public class MasterConverter {
 		double francs = ConvertToSwissFranc.dollarsToSwissFrancs(dollars);
 		double won = ConvertToWon.dollarsToWon(dollars);
 		double yen = ConvertToYen.dollarsToYen(dollars);
+		currencyArray.add(euros);
 		currencyArray.add(aussies);
 		currencyArray.add(canDols);
-		currencyArray.add(euros);
 		currencyArray.add(hkDols);
 		currencyArray.add(nzDols);
 		currencyArray.add(pounds);
