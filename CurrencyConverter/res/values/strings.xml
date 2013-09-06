@@ -15,5 +15,11 @@
     <string name="aus">AUS</string>
     <string name="can">CAN</string>
     <string name="hk">HK</string>
+    <string name="nzl">NZL</string>
+    <string name="uk">UK</string>
+    <string name="swe">SWE</string>
+    <string name="swz">SWZ</string>
+    <string name="won">WON</string>
+    <string name="yen">YEN</string>
 
 </resources>
