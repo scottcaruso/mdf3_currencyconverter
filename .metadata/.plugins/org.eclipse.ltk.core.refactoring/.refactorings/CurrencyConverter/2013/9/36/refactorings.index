@@ -1,2 +1,14 @@
 1378359148417	Rename package 'com.scottcaruso.currencyconverter'
 1378434138841	Delete element
+1378438563799	Extracts string 'U.S. Dollars' into R.string.u_s_dollars
+1378438621978	Extracts string 'Placeholder Dollars' into R.string.placeholder_dollars
+1378439784624	Convert to Compound Drawable
+1378439908728	Extracts string 'Euros' into R.string.euros
+1378439928296	Extracts string 'Euro Amt.' into R.string.euro_amt_
+1378440757330	Extracts string 'Australian Dollars' into R.string.australian_dollars
+1378440799898	Extracts string 'Aussie Amount' into R.string.aussie_amount
+1378441224979	Extracts string 'EUR' into R.string.eur
+1378441250998	Extracts string '0.00' into R.string._0_00
+1378441292602	Extracts string 'AUS' into R.string.aus
+1378441385133	Extracts string 'CAN' into R.string.can
+1378441408892	Extracts string 'HK' into R.string.hk
