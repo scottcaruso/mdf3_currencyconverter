@@ -8,7 +8,6 @@ import com.scottcaruso.currencyconverter.R;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.pm.ActivityInfo;
 import android.util.Log;
 import android.view.Menu;
 
@@ -18,8 +17,6 @@ public class CurrencyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
-        
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         
         ArrayList<Double> thisConversion = MasterConverter.createCurrencyArray(1.25);
         Log.i("Dollars","1.25 equals " + thisConversion.get(0).toString()+" Euros");
