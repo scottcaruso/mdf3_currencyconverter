@@ -1,0 +1,10 @@
+package com.scottcaruso.converters;
+
+public class ConvertToWon {
+	
+	static public double dollarsToEuros (double dollars)
+	{
+		double euros = dollars*1092.10;
+		return euros;
+	}
+}

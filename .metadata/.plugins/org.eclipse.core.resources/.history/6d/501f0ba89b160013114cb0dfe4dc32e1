@@ -1,0 +1,27 @@
+package com.scottcaruso.converters;
+
+import java.util.ArrayList;
+
+public class MasterConverter {
+	
+	public static ConvertToAustralianDollar newAussie;
+	ConvertToCanadianDollar newCanada;
+	ConvertToEuros newEuros;
+	ConvertToHongKongDollar newHKDollar;
+	ConvertToNewZealandDollar newNZDollar;
+	ConvertToPounds newPounds;
+	ConvertToSwedishKrona newKronas;
+	ConvertToSwissFranc newFrancs;
+	ConvertToWon newWon;
+	ConvertToYen newYen;
+	
+	public static ArrayList<Double> createCurrencyArray (double dollars)
+	{	
+		ArrayList<Double> currencyArray = null;
+		
+		
+		
+		return currencyArray;
+	}
+
+}

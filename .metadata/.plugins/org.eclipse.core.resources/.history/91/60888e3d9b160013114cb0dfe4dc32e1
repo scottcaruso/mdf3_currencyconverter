@@ -1,0 +1,18 @@
+package com.scottcaruso.converters;
+
+import java.util.ArrayList;
+
+public class MasterConverter {
+	
+	public static ArrayList<Double> createCurrencyArray (double dollars)
+	{
+		ConvertToAustralianDollar();
+		ArrayList<Double> currencyArray = null;
+		
+		
+		
+		
+		return currencyArray;
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.scottcaruso.converters;
+
+import java.util.ArrayList;
+
+public class MasterConverter {
+	
+	public static ArrayList createCurrencyArray (double dollars)
+	{
+		ArrayList currencyArray = new ArrayList();
+		
+		
+		
+		return currencyArray;
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.scottcaruso.converters;
+
+public class MasterConverter {
+	
+	public static double[] createCurrencyArray (double dollars)
+	{
+		double[] currencyArray;
+		
+		return currencyArray;
+	}
+
+}
