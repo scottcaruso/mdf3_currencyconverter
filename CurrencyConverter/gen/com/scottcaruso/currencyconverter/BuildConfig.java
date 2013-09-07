@@ -1,4 +1,8 @@
-/** Automatically generated file. DO NOT MODIFY */
+/* Scott Caruso
+ * MDF III
+ * 1309 - Week 1 Assignment
+ * Currency Converter
+ */
 package com.scottcaruso.currencyconverter;
 
 public final class BuildConfig {

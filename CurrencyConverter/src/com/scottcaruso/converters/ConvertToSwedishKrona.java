@@ -1,3 +1,8 @@
+/* Scott Caruso
+ * MDF III
+ * 1309 - Week 1 Assignment
+ * Currency Converter
+ */
 package com.scottcaruso.converters;
 
 public class ConvertToSwedishKrona {

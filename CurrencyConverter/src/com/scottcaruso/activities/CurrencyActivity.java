@@ -1,8 +1,12 @@
+/* Scott Caruso
+ * MDF III
+ * 1309 - Week 1 Assignment
+ * Currency Converter
+ */
 package com.scottcaruso.activities;
 
 import java.util.ArrayList;
 
-import com.scottcaruso.converters.ConvertToEuros;
 import com.scottcaruso.converters.MasterConverter;
 import com.scottcaruso.currencyconverter.R;
 
@@ -21,15 +25,21 @@ public class CurrencyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
+        //Programatically force the orientation to landscape for the optimal viewing position for the data.
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         
-        String incomingCurrency = null;
+        //Prepare to receive a string from the intent, then try to get an intent. If the try fails, the user receives a friendly error message.
+        String incomingCurrency = null; 
 		try 
 		{
 			Intent incomingIntent = getIntent();
+			//Get the value that is being passed in from the launcher application.
 			incomingCurrency = incomingIntent.getExtras().getString("convertedValue");
-	        if (incomingCurrency != null)
+	        //As long as there wasn't some kind of error in the input...
+			if (incomingCurrency != null)
 	        {
+				//That the incoming value and pass it through the converter
+				//NOTE: The converter still uses a DOUBLE, not a String. This is a remnant of the first iteration and wasn't changed because it didn't need to be.
 	        	double dollars = Double.valueOf(incomingCurrency);
 		        ArrayList<String> thisConversion = MasterConverter.createCurrencyArray(dollars);
 		        
@@ -46,6 +56,7 @@ public class CurrencyActivity extends Activity {
 		        final TextView won = (TextView) findViewById(R.id.sko_amt);
 		        final TextView yen = (TextView) findViewById(R.id.jpn_amt);
 		        
+		        //We know which position everything is in the ArrayList, so we're just programatically setting them rather than doing a loop or anything. If we ever need to be more dynamic, this would have to change to be a for loop or similar.
 		        usd.setText(thisConversion.get(0));
 		        euros.setText(thisConversion.get(1));
 		        aussies.setText(thisConversion.get(2));
@@ -61,10 +72,12 @@ public class CurrencyActivity extends Activity {
 	       {
 				Toast toast = Toast.makeText(this, "There was an error with the incoming data. It cannot be displayed.", Toast.LENGTH_SHORT);
 				toast.show();
+				Log.e("Error","The data that was passed in wasn't correct. Check " + incomingCurrency);
 	       }
 		} catch (Exception e) {
 			Toast toast = Toast.makeText(this, "This application can only be launched from within its companion helper app. Please launch the launcher app first.", Toast.LENGTH_SHORT);
 			toast.show();
+			Log.e("Error","Application was launched on its own rather than from helper.");
 		}
     }
 

@@ -2,7 +2,6 @@ package com.scottcaruso.week1launcherapp;
 
 import java.util.List;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
