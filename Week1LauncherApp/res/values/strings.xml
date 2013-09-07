@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Week1LauncherApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="enter_amount_in_usd_below">Enter Amount in USD Below</string>
+    <string name="convert_currency">Convert Currency</string>
+
+</resources>
