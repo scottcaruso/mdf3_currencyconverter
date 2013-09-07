@@ -1,0 +1,78 @@
+package com.scottcaruso.week1launcherapp;
+
+import java.util.List;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		final EditText currencyAmount = (EditText) findViewById(R.id.entry);
+		final Button convertCurrency = (Button) findViewById(R.id.convert);
+		
+		convertCurrency.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) 
+			{
+			String currency = currencyAmount.getText().toString();
+				try 
+				{
+					//Convert the string to a double to verify that it is valid
+					double currencyDouble = Double.parseDouble(currency);
+					Log.i("Double","Value is " + currencyDouble);
+					
+					//Create an intent
+					Intent converterIntent = new Intent(Intent.ACTION_SEND);
+					// The intent does not have a URI, so declare the "text/plain" MIME type
+					converterIntent.setType("text/plain");
+					converterIntent.putExtra("Value", currencyDouble); // recipients
+					// You can also attach multiple items by passing an ArrayList of Uris
+
+					// Verify that we can reach an intent with the appropriate action
+					PackageManager packageManager = getPackageManager();
+					List<ResolveInfo> activities = packageManager.queryIntentActivities(converterIntent, 0);
+					boolean doesIntentExist = activities.size() > 0;
+					  
+					// Start an activity if it's safe
+					if (doesIntentExist) 
+					{
+					    startActivity(converterIntent);
+					} else
+					{
+						Toast toast = Toast.makeText(MainActivity.this, "No application exists that can convert your data.", Toast.LENGTH_SHORT);
+						toast.show();
+					}
+				} catch (NumberFormatException e) 
+				{
+					Toast toast = Toast.makeText(MainActivity.this, "Please enter a valid numeric value.", Toast.LENGTH_SHORT);
+					toast.show();
+				}
+			}
+		});	
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}
