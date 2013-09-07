@@ -8,10 +8,12 @@ import com.scottcaruso.currencyconverter.R;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CurrencyActivity extends Activity {
 
@@ -19,35 +21,51 @@ public class CurrencyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
-        
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         
-        ArrayList<Double> thisConversion = MasterConverter.createCurrencyArray(1.25);
-        
-        //Init all of the dollar text views so the currency can be displayed
-        final TextView dollars = (TextView) findViewById(R.id.dollar_amt);
-        final TextView euros = (TextView) findViewById(R.id.euro_amt);
-        final TextView aussies = (TextView) findViewById(R.id.ausdol_amt);
-        final TextView canDols = (TextView) findViewById(R.id.can_amt);
-        final TextView hkDols = (TextView) findViewById(R.id.hk_amt);
-        final TextView nzDols = (TextView) findViewById(R.id.nzl_amt);
-        final TextView pounds = (TextView) findViewById(R.id.uk_amt);
-        final TextView krona = (TextView) findViewById(R.id.swe_amt);
-        final TextView francs = (TextView) findViewById(R.id.swz_amt);
-        final TextView won = (TextView) findViewById(R.id.sko_amt);
-        final TextView yen = (TextView) findViewById(R.id.jpn_amt);
-        
-        dollars.setText(thisConversion.get(0).toString());
-        euros.setText(thisConversion.get(1).toString());
-        aussies.setText(thisConversion.get(2).toString());
-        canDols.setText(thisConversion.get(3).toString());
-        hkDols.setText(thisConversion.get(4).toString());
-        nzDols.setText(thisConversion.get(5).toString());
-        pounds.setText(thisConversion.get(6).toString());
-        krona.setText(thisConversion.get(7).toString());
-        francs.setText(thisConversion.get(8).toString());
-        won.setText(thisConversion.get(9).toString());
-        yen.setText(thisConversion.get(10).toString());
+        String incomingCurrency = null;
+		try 
+		{
+			Intent incomingIntent = getIntent();
+			incomingCurrency = incomingIntent.getExtras().getString("convertedValue");
+	        if (incomingCurrency != null)
+	        {
+	        	double dollars = Double.valueOf(incomingCurrency);
+		        ArrayList<Double> thisConversion = MasterConverter.createCurrencyArray(dollars);
+		        
+		        //Init all of the dollar text views so the currency can be displayed
+		        final TextView usd = (TextView) findViewById(R.id.dollar_amt);
+		        final TextView euros = (TextView) findViewById(R.id.euro_amt);
+		        final TextView aussies = (TextView) findViewById(R.id.ausdol_amt);
+		        final TextView canDols = (TextView) findViewById(R.id.can_amt);
+		        final TextView hkDols = (TextView) findViewById(R.id.hk_amt);
+		        final TextView nzDols = (TextView) findViewById(R.id.nzl_amt);
+		        final TextView pounds = (TextView) findViewById(R.id.uk_amt);
+		        final TextView krona = (TextView) findViewById(R.id.swe_amt);
+		        final TextView francs = (TextView) findViewById(R.id.swz_amt);
+		        final TextView won = (TextView) findViewById(R.id.sko_amt);
+		        final TextView yen = (TextView) findViewById(R.id.jpn_amt);
+		        
+		        usd.setText(thisConversion.get(0).toString());
+		        euros.setText(thisConversion.get(1).toString());
+		        aussies.setText(thisConversion.get(2).toString());
+		        canDols.setText(thisConversion.get(3).toString());
+		        hkDols.setText(thisConversion.get(4).toString());
+		        nzDols.setText(thisConversion.get(5).toString());
+		        pounds.setText(thisConversion.get(6).toString());
+		        krona.setText(thisConversion.get(7).toString());
+		        francs.setText(thisConversion.get(8).toString());
+		        won.setText(thisConversion.get(9).toString());
+		        yen.setText(thisConversion.get(10).toString());
+	       } else
+	       {
+				Toast toast = Toast.makeText(this, "There was an error with the incoming data. It cannot be displayed.", Toast.LENGTH_SHORT);
+				toast.show();
+	       }
+		} catch (Exception e) {
+			Toast toast = Toast.makeText(this, "This application can only be launched from within its companion helper app. Please launch the launcher app first.", Toast.LENGTH_SHORT);
+			toast.show();
+		}
     }
 
 
