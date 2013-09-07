@@ -46,17 +46,17 @@ public class CurrencyActivity extends Activity {
 		        final TextView won = (TextView) findViewById(R.id.sko_amt);
 		        final TextView yen = (TextView) findViewById(R.id.jpn_amt);
 		        
-		        usd.setText(thisConversion.get(0));
-		        euros.setText(thisConversion.get(1));
-		        aussies.setText(thisConversion.get(2));
-		        canDols.setText(thisConversion.get(3));
-		        hkDols.setText(thisConversion.get(4));
-		        nzDols.setText(thisConversion.get(5));
-		        pounds.setText(thisConversion.get(6));
-		        krona.setText(thisConversion.get(7));
-		        francs.setText(thisConversion.get(8));
-		        won.setText(thisConversion.get(9));
-		        yen.setText(thisConversion.get(10));
+		        usd.setText(thisConversion.get(0).toString());
+		        euros.setText(thisConversion.get(1).toString());
+		        aussies.setText(thisConversion.get(2).toString());
+		        canDols.setText(thisConversion.get(3).toString());
+		        hkDols.setText(thisConversion.get(4).toString());
+		        nzDols.setText(thisConversion.get(5).toString());
+		        pounds.setText(thisConversion.get(6).toString());
+		        krona.setText(thisConversion.get(7).toString());
+		        francs.setText(thisConversion.get(8).toString());
+		        won.setText(thisConversion.get(9).toString());
+		        yen.setText(thisConversion.get(10).toString());
 	       } else
 	       {
 				Toast toast = Toast.makeText(this, "There was an error with the incoming data. It cannot be displayed.", Toast.LENGTH_SHORT);

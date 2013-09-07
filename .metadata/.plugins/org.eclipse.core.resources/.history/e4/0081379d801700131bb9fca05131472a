@@ -9,7 +9,7 @@ public class MasterConverter {
 	{	
 		ArrayList<String> currencyArray = new ArrayList<String>();
 		DecimalFormat df = new DecimalFormat("#.00"); 
-		currencyArray.add(df.format(dollars));
+		currencyArray.add(String.valueOf(dollars));
 		double aussies = ConvertToAustralianDollar.dollarsToAussies(dollars);
 		double canDols = ConvertToCanadianDollar.dollarsToCanadianDollars(dollars);
 		double euros = ConvertToEuros.dollarsToEuros(dollars);
